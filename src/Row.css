@@ -1,0 +1,42 @@
+.row {
+  color: white;
+  margin-left: 20px;
+}
+
+.row__posters {
+  display: flex;
+  /* hide all the extra horizontal stuff */
+  overflow-y: hidden;
+  /* adding a scrollbar (horizontal) to each row */
+  overflow-x: scroll;
+  /* to not crop on transform */
+  padding: 20px;
+}
+
+/* keep the functionality of the scrollbar (horizontal), but don't show the actual scrollbar (horizontal) */
+.row__posters::-webkit-scrollbar {
+  display: none
+}
+
+.row__poster {
+  /* will keep the aspect ratio */
+  object-fit: contain;
+  width: 100%;
+  max-height: 100px;
+  margin-right: 10px;
+  /* makes such a difference */
+  transition: transform 450ms;
+}
+
+.row__poster:hover {
+  transform: scale(1.08);
+}
+
+.row__posterLarge {
+  max-height: 250px;
+}
+
+.row__posterLarge:hover {
+  transform: scale(1.09);
+  opacity: 1;
+}
